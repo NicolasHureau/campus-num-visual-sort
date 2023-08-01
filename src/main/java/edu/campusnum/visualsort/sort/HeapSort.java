@@ -1,6 +1,7 @@
 package edu.campusnum.visualsort.sort;
 
 import edu.campusnum.visualsort.model.ObservableArray;
+import edu.campusnum.visualsort.model.Order;
 
 /**
  * Created by Web 74 all right reserved
@@ -24,7 +25,8 @@ public class HeapSort implements SortAlgorithm{
         }
     }
     void remonter(ObservableArray array, int index){
-        if (array.get(index)>array.get(index/2)){
+        //if (array.get(index)>array.get(index/2)){
+        if (array.compare(index,index/2).equals(Order.Higher)){
             array.swap(index,index/2);
             remonter(array,index/2);
         }
@@ -33,12 +35,14 @@ public class HeapSort implements SortAlgorithm{
         int formule = 2*index+1;
         if (formule<element){
             int max;
-            if (array.get(formule)>array.get(2*index)){
+            //if (array.get(formule)>array.get(2*index)){
+            if (array.compare(formule,2*index).equals(Order.Higher)){
                 max = formule;
             }else{
                 max = 2*index;
             }
-            if (array.get(max)>array.get(index)){
+            //if (array.get(max)>array.get(index)){
+            if (array.compare(max,index).equals(Order.Higher)){
                 array.swap(max,index);
                 redescendre(array,element,max);
             }

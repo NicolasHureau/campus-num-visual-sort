@@ -1,6 +1,7 @@
 package edu.campusnum.visualsort.sort;
 
 import edu.campusnum.visualsort.model.ObservableArray;
+import edu.campusnum.visualsort.model.Order;
 
 /**
  * Created by Web 74 all right reserved
@@ -15,7 +16,8 @@ public class BubbleSort implements SortAlgorithm{
         while (permut){
             permut = false;
             for (int i = 0; i < array.getLength()-1; i++) {
-                if (array.get(i)>array.get(i+1)){
+                //if (array.get(i)>array.get(i+1)){
+                if (array.compare(i,i+1).equals(Order.Higher)){
                     array.swap(i,i+1);
                     permut = true;
                 }
