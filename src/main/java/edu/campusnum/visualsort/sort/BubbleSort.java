@@ -10,5 +10,16 @@ import edu.campusnum.visualsort.model.ObservableArray;
  */
 public class BubbleSort implements SortAlgorithm{
     @Override
-    public void sort(ObservableArray array) { throw new UnsupportedOperationException("Not implemented"); }
+    public void sort(ObservableArray array) {
+        boolean permut = true;
+        while (permut){
+            permut = false;
+            for (int i = 0; i < array.getLength()-1; i++) {
+                if (array.get(i)>array.get(i+1)){
+                    array.swap(i,i+1);
+                    permut = true;
+                }
+            }
+        }
+    }
 }
