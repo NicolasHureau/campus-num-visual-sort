@@ -11,6 +11,15 @@ import edu.campusnum.visualsort.model.ObservableArray;
 public class SelectionSort implements SortAlgorithm{
     @Override
     public void sort(ObservableArray array) {
-        throw new UnsupportedOperationException("Not implemented");
+        for (int i = 0; i < array.getLength(); i++) {
+            int min = i;
+            for (int j = i+1; j < array.getLength(); j++){
+                if (array.get(j) < array.get(min)){
+                    min = j;
+                }
+            }
+            array.swap(i,min);
+
+        }
     }
 }
