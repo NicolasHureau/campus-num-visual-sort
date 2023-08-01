@@ -11,6 +11,22 @@ import edu.campusnum.visualsort.model.ObservableArray;
 public class ShellSort implements SortAlgorithm{
     @Override
     public void sort(ObservableArray array) {
-        throw new UnsupportedOperationException("Not implemented");
+        int longueur = array.getLength();
+        int n = 0;
+        while (n < longueur){
+            n = 3*n+1;
+        }
+        while (n!=0){
+            n = n/3;
+            for (int i = n; i < longueur; i++) {
+                int valeur = array.get(i);
+                int j = i;
+                while (j>n-1 && array.get(j-n)>valeur){
+                    array.swap(j,j-n);
+                    j = j-n;
+                }
+
+            }
+        }
     }
 }
