@@ -2,6 +2,8 @@ package edu.campusnum.visualsort.sort;
 
 import edu.campusnum.visualsort.model.ObservableArray;
 
+import static java.util.Collections.swap;
+
 /**
  * Created by Web 74 all right reserved
  * User: vincent
@@ -11,6 +13,16 @@ import edu.campusnum.visualsort.model.ObservableArray;
 public class InsertionSort  implements SortAlgorithm{
     @Override
     public void sort(ObservableArray array) {
-        throw new UnsupportedOperationException("Not implemented");
+
+        int n = array.getLength();
+        for (int i=1; i<n; i++){
+            int temp = array.get(i);
+            int j = i;
+            while(j>0 && array.get(j-1)>temp){
+                array.swap(j,j-1);
+                j--;
+            }
+
+        }
     }
 }
