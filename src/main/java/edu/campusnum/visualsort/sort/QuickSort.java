@@ -11,6 +11,7 @@ import edu.campusnum.visualsort.model.ObservableArray;
 public class QuickSort implements SortAlgorithm{
     @Override
     public void sort(ObservableArray array) {
+
         rapidSort(array, 0,array.getLength()-1 );
     }
     int part (ObservableArray array,int first, int last,int pivot){
